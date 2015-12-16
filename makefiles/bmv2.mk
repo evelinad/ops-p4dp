@@ -9,8 +9,8 @@ $(BMV2_PD_DIR):
 
 bmv2-pd: $(P4_INPUT) | $(BMV2_PD_DIR)
 	@echo $(BUILD_DIR)
-	$(MAKE) -C $(SUBMODULE_P4C_BM)/pd_mk/ $(BMV2_PD_ENV)
-	$(MAKE) -C $(SUBMODULE_P4C_BM)/pd_mk/ $(BMV2_PD_ENV) 'DESTDIR=$(BUILD_DIR)' install
+	$(MAKE) -C $(SUBMODULE_P4C_BM)/pd_mk/ $(BMV2_PD_ENV) includedir=/bmv2_pd/include libdir=/bmv2_pd/lib datadir=/bmv2_pd/share
+	$(MAKE) -C $(SUBMODULE_P4C_BM)/pd_mk/ $(BMV2_PD_ENV) includedir=/bmv2_pd/include libdir=/bmv2_pd/lib datadir=/bmv2_pd/share 'DESTDIR=$(BUILD_DIR)' install
 
 BMV2_PD_INC := $(BUILD_DIR)/bmv2_pd/include/p4_pd/
 BMV2_PD_INC += $(BUILD_DIR)/bmv2_pd/include/pdfixed/
