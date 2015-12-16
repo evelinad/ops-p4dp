@@ -18,7 +18,7 @@ GLOBAL_INCLUDES := $(addprefix -I, $(BMV2_PD_INC))
 
 $(BUILD_DIR)/main.o: $(TARGET_ROOT)/main.c bmv2-pd
 	@echo Compiling : $(notdir $@)
-	$(VERBOSE)gcc -o $@ $(GLOBAL_INCLUDES) $(GLOBAL_CFLAGS) -c $<
+	$(VERBOSE)$(CC) -o $@ $(GLOBAL_INCLUDES) $(GLOBAL_CFLAGS) -c $<
 
 PD_LIBS := -L$(BMV2_PD_LIB_DIR)/ -Wl,-rpath=$(BMV2_PD_LIB_DIR) -lpd -lpdfixed -lpdthrift -lpdfixedthrift
 

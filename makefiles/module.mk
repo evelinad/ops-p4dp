@@ -67,12 +67,12 @@ endif
 $(MODULE)_OBJS_C := $(addprefix $($(MODULE)_BUILD_OBJ_DIR)/, $(notdir $($(MODULE)_SOURCES_C:%.c=%.o)))
 $($(MODULE)_BUILD_OBJ_DIR)/%.o : $($(MODULE)_SRC_DIR)/%.c ${P4_PREREQ}
 	@echo "    Compiling : $(MODULE_INFO)::$(notdir $@)"
-	$(VERBOSE)gcc -o $@ $(COVERAGE_FLAGS) $(DEBUG_FLAGS) $(GLOBAL_INCLUDES) $(GLOBAL_CFLAGS) $(MODULE_INCLUDES) -MD -c $<
+	$(VERBOSE)$(CC) -o $@ $(COVERAGE_FLAGS) $(DEBUG_FLAGS) $(GLOBAL_INCLUDES) $(GLOBAL_CFLAGS) $(MODULE_INCLUDES) -MD -c $<
 
 $(MODULE)_OBJS_CPP := $(addprefix $($(MODULE)_BUILD_OBJ_DIR)/, $(notdir $($(MODULE)_SOURCES_CPP:%.cpp=%.o)))
 $($(MODULE)_BUILD_OBJ_DIR)/%.o : $($(MODULE)_SRC_DIR)/%.cpp ${P4_PREREQ}
 	@echo "    Compiling : $(MODULE_INFO)::$(notdir $@)"
-	$(VERBOSE)g++ -o $@ $(COVERAGE_FLAGS) $(DEBUG_FLAGS) $(GLOBAL_INCLUDES) $(GLOBAL_CFLAGS) $(MODULE_INCLUDES) -MD -std=c++11 -c $<
+	$(VERBOSE)$(CXX) -o $@ $(COVERAGE_FLAGS) $(DEBUG_FLAGS) $(GLOBAL_INCLUDES) $(GLOBAL_CFLAGS) $(MODULE_INCLUDES) -MD -std=c++11 -c $<
 
 # Include the auto-generated .d dependency files. gcc/g++ generate the .d file
 # when -MD option is used.
