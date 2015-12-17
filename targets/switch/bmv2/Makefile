@@ -34,7 +34,7 @@ endif
 MAKEFILES_DIR := ${P4FACTORY}/makefiles
 
 # This target's P4 name
-export P4_INPUT := ../../../submodules/switch/p4src/switch.p4
+export P4_INPUT := $(ROOT)/targets/switch/p4src/switch.p4
 export P4_NAME := switch
 export P4_PREFIX := dc
 
