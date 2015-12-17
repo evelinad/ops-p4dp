@@ -23,7 +23,7 @@ BMV2_THRIFT_PY_DIR = $(BUILD_DIR)/bmv2_pd/share/gen-py/
 
 $(BMV2_EXE):
 	$(MAKE) -C $(SUBMODULE_BM)
-	ln -sf $(SUBMODULE_BM)/targets/simple_switch/simple_switch $(BMV2_EXE)
+	cp -a $(SUBMODULE_BM)/targets/simple_switch/simple_switch $(BMV2_EXE)
 
 BMV2_P4C_MAIN := $(SUBMODULE_P4C_BM)/p4c_bm/__main__.py
 
