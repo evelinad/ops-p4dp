@@ -20,3 +20,12 @@ libtool
 m4/
 missing
 test-driver
+
+gen-cpp/
+gen-py/
+targets/*/bmv2/build/
+targets/*/bmv2/drivers
+targets/*/bmv2/*_bmv2
+targets/*/bmv2/*_bmv2.json
+.bmv2-pd-sane
+thrift_files.ts
