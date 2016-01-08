@@ -31,7 +31,7 @@ noinst_LTLIBRARIES = libsimpleswitch.la
 libsimpleswitch_la_SOURCES = \
 simple_switch.cpp simple_switch.h primitives.h
 
-bin_PROGRAMS = simple_switch
+sbin_PROGRAMS = simple_switch
 
 simple_switch_LDADD = \
 $(top_srcdir)/modules/bm_runtime/libbmruntime.la \
